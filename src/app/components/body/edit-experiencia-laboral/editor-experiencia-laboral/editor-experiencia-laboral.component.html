@@ -1,0 +1,96 @@
+<ng-container >
+    <div class="editor-container">
+        <div class="container">
+        Id: {{ experienciaLaboral.id_experiencia_laboral}} || Proyecto: {{ experienciaLaboral.empresa }}
+        </div>
+    
+        <form
+        [formGroup]="editExperienciaForm"
+      >
+
+      <div class="mb-3">
+        <label for="empresa" class="form-label">Nombre de la empresa:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="empresa"
+          formControlName="empresa"
+          value=""
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="puesto" class="form-label">Cargo obtenido:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="puesto"
+          formControlName="puesto"
+          value=""
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="descripcions" class="form-label"
+          >Descripcion referente al empleo:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="descripcions"
+          formControlName="descripcion"
+          value=""
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="desde" class="form-label">Ingreso a la empresa:</label>
+        <input
+          type="date"
+          class="form-control"
+          id="desde"
+          formControlName="desde"
+          value=""
+        />
+        
+      </div>
+      <div class="mb-3">
+        <label for="hasta" class="form-label">Egreso de la empresa:</label>
+        <input
+          type="date"
+          class="form-control"
+          id="hasta"
+          formControlName="hasta"
+          [value]="experienciaLaboral.hasta | date:'dd/MM/yy'"
+        />
+      </div>
+
+
+
+        <div class="footer-card mt-3">
+          <button
+            class="btn"
+            [disabled] = "editExperienciaForm.invalid"
+            style="background-color: var(--light-green); color: white"
+            (click)="editarExperiencia(experienciaLaboral.id_experiencia_laboral)"
+          >
+            Editar
+          </button>
+          
+          <button
+            class="btn"
+            style="background-color: var(--red); color: white"
+            (click)="eliminarExperiencia(experienciaLaboral.id_experiencia_laboral)"
+          >
+            Eliminar
+          </button>
+        </div>
+      </form>
+    
+    
+    
+    
+    
+    </div>
+    </ng-container>
+    

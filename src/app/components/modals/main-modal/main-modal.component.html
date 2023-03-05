@@ -1,0 +1,17 @@
+<ng-container *ngIf="modalService.contacto || modalService.login">
+
+<div class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-header-title">{{title}}</div> 
+            <i class="fa-solid fa-xmark fa-2xl"
+           (click)="modalService.closeModal()"
+            ></i>
+        </div>
+        <div class="modal-container">
+            <ng-content></ng-content>
+        </div>
+
+    </div>
+</div>
+</ng-container>

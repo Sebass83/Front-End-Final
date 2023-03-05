@@ -1,0 +1,5 @@
+.footer-card{
+    display: grid;
+    align-items: end;
+    gap:10px
+  }

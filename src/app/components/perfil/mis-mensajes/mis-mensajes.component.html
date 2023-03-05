@@ -1,0 +1,22 @@
+<div class="mensajes" *ngIf="mensajes">
+  <button class="btn" style="background-color: var(--mid-blue); color: white"(click)="toogleVisible()"><i  class="fa-solid fa-eye"></i></button>
+  <div class="mensaje" *ngFor="let mensaje of mensajes.results">
+    <h3>
+      Mensaje recibido de: <strong>{{ mensaje.nombre_completo }} </strong> 
+    </h3>
+
+    <app-content-mesaje *ngIf="visible" >
+      <h5>{{ mensaje.email }}</h5>
+      <p>{{ mensaje.mensaje }}</p>
+
+   
+    </app-content-mesaje>
+    <footer>
+      <button class="btn btn-danger" (click)="eliminar(mensaje)">
+        eliminar
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </footer>
+
+  </div>
+</div>

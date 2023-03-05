@@ -1,0 +1,27 @@
+header {
+    background-color: var(--dark-blue);
+    text-align: center;
+    width: 100%;
+    min-width: 375px;
+  }
+  .img-responsive-header {
+    margin: 30px 0 0 0;
+    width: 100%;
+    min-width: 350px;
+    max-width: fit-content;
+  }
+  
+  .fondo {
+    display: flex;
+    margin-top: 1rem;
+    position: relative;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    height: inherit;
+    width: fit-content;
+    padding: 10px;
+    background-color: var(--light-blue);
+  }
+
+  

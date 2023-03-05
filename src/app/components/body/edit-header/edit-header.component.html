@@ -1,0 +1,84 @@
+<div class="editable">
+  <span (click)="toogleEditar()"
+    >Portfolio info__ <i class="fa-solid fa-pen"></i
+  ></span>
+  <div class="container" *ngIf="editar">
+    <form (ngSubmit)="editarPortfolio()" autocomplete="off" [formGroup]="miFormulario">
+
+      <div class="mb-3">
+        <label for="github_url" class="form-label">Direccion github:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="github_url"
+          formControlName="github_url"
+          [value]="resultado.github_url"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="informacion_titulo" class="form-label">Titulo:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="informacion_titulo"
+          formControlName="informacion_titulo"
+          [value]="resultado.informacion_titulo"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="saludo_titulo" class="form-label">Saludo:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="saludo_titulo"
+          formControlName="saludo_titulo"
+          [value]="resultado.saludo_titulo"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="saludo_descripcion" class="form-label">Introduccion:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="saludo_descripcion"
+          formControlName="saludo_descripcion"
+          [value]="resultado.saludo_descripcion"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="cv_url" class="form-label">CV url:</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="cv_url"
+          id="cv_url"
+          [value]="resultado.cv_url"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="foto_perfil" class="form-label">Foto de perfil:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="foto_perfil"
+          formControlName="foto_perfil"
+          [value]="resultado.foto_perfil"
+        />
+      </div>
+
+      <div class="footer-card mt-3">
+      <button 
+      type="submit" 
+      class="btn"
+      style="background-color: var(--light-green); color: white"
+      [disabled]="miFormulario.invalid"
+      >Editar</button>
+    </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+.titulo {
+  display: grid;
+  margin-bottom: 10px;
+}
+.tecnoContainerElement {
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background-color: var(--editable-v2);
+  border-radius: 6px;
+}
+
+.tecnologia {
+  display: grid;
+  grid-template-columns: 1fr auto ;
+  gap: 10px;
+}
+
+
+.agregarTecno {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+   margin-top: 10px;
+   padding: 1rem ;
+  
+   border-radius: 6px;
+
+   background-color: #b6b6b6;
+}
+.footer-card{
+  display: grid;
+  align-items: end;
+  gap:10px
+}
+
+.tecno{
+  display: flex;
+  background-color: white;
+  border-radius: 4px;
+  align-self: center;
+  padding: 6px 12px;
+  border: solid 1px #b6b6b6;
+  border-left: solid 6px;
+
+}
+.tecno img{
+  width: 20px;
+  margin-right: 12px;
+}

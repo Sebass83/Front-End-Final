@@ -1,0 +1,50 @@
+#informacion_general {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(20rem, 1fr));
+    min-width: 390px;
+    margin:  13rem 0;
+    max-width: 100%;
+    margin: 3rem auto;
+  }
+  #saludo {
+    max-width: 300px;
+    font-size: 40px;
+  }
+  #descripcion {
+    width: 80vw;
+    max-width: 300px;
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  .fondo {
+    display: flex;
+    margin-top: 1rem;
+    position: relative;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    height: inherit;
+    width: fit-content;
+
+    background-color: var(--light-blue);
+  }
+  .fondo::before {
+    content: " ";
+    display: block;
+    background-color: var(--light-orange);
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+    border-radius: 10px;
+    top: -10px;
+    left: -10px;
+  }
+  #sas_img{
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 300px;
+    max-height: 300px;
+  }

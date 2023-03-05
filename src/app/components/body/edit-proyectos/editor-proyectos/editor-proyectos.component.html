@@ -1,0 +1,151 @@
+<ng-container>
+  <div class="tecnoContainerElement container">
+    <div class="container">
+      Id: {{ proyecto.id_proyecto }} || Proyecto: {{ proyecto.titulo_proyecto }}
+    </div>
+
+    <form autocomplete="off" [formGroup]="miFormulario" class="container">
+      <div class="mb-3">
+        <label for="titulo_proyecto" class="form-label"
+          >Titulo del proyecto:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="titulo_proyecto"
+          formControlName="titulo_proyecto"
+          [value]="proyecto.titulo_proyecto"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="descripcion_proyecto" class="form-label"
+          >Descripcion del proyecto:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="descripcion_proyecto"
+          formControlName="descripcion_proyecto"
+          [value]="proyecto.descripcion_proyecto"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="imgURL_proyecto" class="form-label"
+          ><i class="fa-solid fa-link"></i> Imagen del proyecto:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="imgURL_proyecto"
+          formControlName="imgURL_proyecto"
+          [value]="proyecto.imgURL_proyecto"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="github_proyecto" class="form-label"
+          ><i class="fa-solid fa-link"></i> Github:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="github_proyecto"
+          formControlName="github_proyecto"
+          [value]="proyecto.github_proyecto"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="url_proyecto" class="form-label"
+          ><i class="fa-solid fa-link"></i> Deploy del proyecto:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          formControlName="url_proyecto"
+          id="url_proyecto"
+          [value]="proyecto.url_proyecto"
+        />
+      </div>
+
+      <div class="footer-card">
+        <button
+          type="submit"
+          class="btn"
+          style="background-color: var(--light-green); color: white"
+          [disabled]="miFormulario.invalid"
+          (click)="editarProyectoInfo()"
+        >
+          Editar
+        </button>
+      </div>
+    </form>
+
+    <hr />
+
+    <div class="container">Tecnologias:</div>
+
+    <div class="tecnoContainerElement container">
+      <div class="tecnologia" *ngIf="proyecto.tecnologias.length > 0">
+        <ng-container
+          *ngFor="let tecnologia of proyecto.tecnologias"
+          class="tecnologia-container"
+        >
+        <div class="tecno" 
+        [style.border-left-color]="tecnologia.color"
+        
+       
+        > <img
+        [src]="tecnologia.svg_url"
+        [alt]="tecnologia.nombre_tecnologia"
+      />{{ tecnologia.nombre_tecnologia }}</div>
+        
+          <button
+            class="btn"
+            style="background-color: var(--red); color: white"
+            (click)="eliminarProyectoTecnologia(proyecto.id_proyecto,tecnologia.id_tecnologia)"
+          >
+            Eliminar
+          </button>
+        </ng-container>
+      </div>
+
+      <div>
+        <form [formGroup]="tecnoAddFormulario" class="agregarTecno">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            formControlName="id_tecnologia"
+          >
+            <option selected value="">Elige la tecnologia a agregar</option>
+            <ng-container *ngFor="let tecno of tecnologias">
+              <option [value]="tecno.id_tecnologia">
+                {{ tecno.nombre_tecnologia }}
+              </option>
+            </ng-container>
+          </select>
+          <button
+            id="agregarTecnologia"
+            class="btn"
+            style="background-color: var(--light-green); color: white"
+            [disabled]="tecnoAddFormulario.invalid"
+            (click)="agregarTecnologia()"
+          >
+            Agregar tecnologia
+          </button>
+        </form>
+        <div class="footer-card mt-3">
+        <button
+          class="btn"
+          style="background-color: var(--red); color: white"
+          (click)="eliminarProyecto(proyecto.id_proyecto)"
+        >
+          Eliminar Proyecto y relaciones
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

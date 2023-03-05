@@ -1,0 +1,139 @@
+<div class="editable">
+    <div class="extend">
+      <span (click)="toogleEditar()"
+        >Estudios__
+        <i class="fa-solid fa-pen"></i>
+      </span>
+      <button
+    
+      class="btn"
+      style="background-color: var(--light-green); color: white"
+      (click)="nuevoEstudio()"
+      >
+    
+      Agregar estudio
+    </button>
+
+
+    <div class="container" *ngIf="editar" >
+      <div *ngFor="let estudio of resultado.estudios" class="tecno">
+        <app-editor-estudio 
+        [estudio]="estudio"
+        ></app-editor-estudio>
+      
+      </div>
+    </div>
+
+
+  
+  </div>
+
+
+    <ng-container *ngIf="crear">
+        <form autocomplete="off" class="container" [formGroup]="newEstudio">
+          <div class="mb-3">
+
+            <label for="es_carrera" class="form-label" 
+            >Es una Carrera Universitaria? :</label>
+            <select class="form-select" aria-label="Default select example" id="es_carrera" formControlName="es_carrera">
+                <option selected value=""> Seleccionar opcion. </option>
+                <option value=true> Es Carrera Universitaria</option>
+                <option value=false> Es un curso</option>
+              </select>
+            <label for="nombre_estudio" class="form-label"
+              >Nombre del estudio:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre_estudio"
+              formControlName="nombre_estudio"
+              value=""
+            />
+          </div>
+
+          <label for="finalizado" class="form-label"
+            >Estudio Finalizado:</label>
+            <select class="form-select" aria-label="Default select example" id="finalizado" formControlName="finalizado">
+                <option selected value=""> Seleccionar opcion. </option>
+                <option value=true> Si</option>
+                <option value=false> No</option>
+              </select>
+    
+          <div class="mb-3">
+            <label for="entidad_educador" class="form-label"
+              >Entidad educadora:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="entidad_educador"
+              formControlName="entidad_educador"
+              value=""
+            />
+          </div>
+    
+          <div class="mb-3">
+            <label for="img_entidad" class="form-label"
+              ><i class="fa-solid fa-link"></i> Imagen de la entidad educadora:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="img_entidad"
+              formControlName="img_entidad"
+              value=""
+            />
+          </div>
+
+          <div class="mb-3" >
+            <label for="titulo" class="form-label" 
+              >Titulo de la carrera:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="titulo"
+              formControlName="titulo"
+              value=""
+              placeholder="Solo si es carrera"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="descripcion-s" class="form-label"
+              >Descripcion:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="descripcion-s"
+              formControlName="descripcion"
+              value=""
+            />
+          </div>
+    
+          <div class="mb-3">
+            <label for="titulo_Url" class="form-label"
+              ><i class="fa-solid fa-link"></i> Titulo / certificado de estudio:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="titulo_Url"
+              formControlName="titulo_Url"
+              value=""
+            />
+          </div>
+          <div class="footer-card">
+            <button
+              type="submit"
+              class="btn"
+              style="background-color: var(--light-green); color: white"
+              (click)="crearEstudio()"
+              [disabled]="newEstudio.invalid"
+            >
+              Crear Estudio
+            </button>
+          </div>
+        </form>
+      </ng-container>
+    </div>
