@@ -1,0 +1,104 @@
+<div class="editable">
+  <div class="extend">
+    <span (click)="toogleEditar()"
+      >Proyectos__
+      <i class="fa-solid fa-pen"></i>
+    </span>
+    <button
+  
+    class="btn"
+    style="background-color: var(--light-green); color: white"
+    (click)="nuevoProyecto()"
+    >
+  
+    Agregar proyecto
+  </button>
+  </div>
+  
+
+  <ng-container *ngFor="let proyecto of resultado.proyectos">
+    <app-editor-proyectos
+      [proyecto]="proyecto"
+      [tecnologias]="resultado.tecnologias"
+      *ngIf="editar"
+  ></app-editor-proyectos>
+  </ng-container>
+
+  <ng-container *ngIf="crear">
+
+
+    <form  autocomplete="off"  class="container" [formGroup]="newProyec">
+
+      <div class="mb-3">
+        <label for="titulo_proyecto" class="form-label">Titulo del proyecto:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="titulo_proyecto"
+          formControlName="titulo_proyecto"
+          value=""
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="descripcion_proyecto" class="form-label">Descripcion del proyecto:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="descripcion_proyecto"
+          formControlName="descripcion_proyecto"
+          value=""
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="imgURL_proyecto" class="form-label"><i class="fa-solid fa-link"></i> Imagen del proyecto:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="imgURL_proyecto"
+          formControlName="imgURL_proyecto"
+          value=""
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="github_proyecto" class="form-label"><i class="fa-solid fa-link"></i> Github:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="github_proyecto"
+          formControlName="github_proyecto"
+          value=""
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="url_proyecto" class="form-label"><i class="fa-solid fa-link"></i> Deploy del proyecto:</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="url_proyecto"
+          id="url_proyecto"
+          value=""
+        />
+      </div>
+
+      <div class="footer-card mt-3">
+      <button 
+      type="submit" 
+      class="btn"
+      style="background-color: var(--light-green); color: white"
+      (click)="crearProyecto()"
+      [disabled] = "newProyec.invalid"
+      >Crear Proyecto</button>
+    </div>
+    </form>
+  </ng-container>
+  
+  
+
+  
+</div>
+
+

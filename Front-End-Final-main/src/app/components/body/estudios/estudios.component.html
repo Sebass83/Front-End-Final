@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-center titulo">
+    <span class="fondo">Estudios</span>
+  </div>
+
+  <div class="container" *ngIf="resultado.estudios">
+    <div class="estudio" *ngFor="let estudio of resultado.estudios">
+      <div class="img-entidad">
+        <img [src]="estudio.img_entidad" alt="" srcset="" />
+      </div>
+      <div>
+        <div *ngIf="estudio.es_carrera">
+          Universidad: {{ estudio.entidad_educador }}
+        </div>
+        <div *ngIf="!estudio.es_carrera">
+          Plataforma: {{ estudio.entidad_educador }}
+        </div>
+        <div>{{ estudio.nombre_estudio }}</div>
+        <div *ngIf="estudio.finalizado">{{ estudio.titulo }}</div>
+        <div>{{ estudio.descripcion }}</div>
+      </div>
+      <div>
+        <div class="img-titulo">.
+          <div *ngIf="estudio.finalizado">
+            <img [src]="estudio.titulo_Url" alt="" srcset="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

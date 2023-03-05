@@ -1,0 +1,12 @@
+.editor-container{
+    padding: 2rem;
+    margin: 10px 0;
+    background-color: var(--editable-v2);
+    border-radius: 6px;
+}
+
+.footer-card{
+    display: grid;
+    align-items: end;
+    gap:10px
+  }
