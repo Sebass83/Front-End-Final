@@ -32,3 +32,23 @@
 .titulo{
     margin: 20rem 0 10rem 0;;
 }
+
+@media (min-width: 375px){
+    .estudio{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 992px){
+    .estudio{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        columns: 4;
+        padding: 2rem 4rem;
+        border-bottom: 1px dotted black;
+    }
+}
