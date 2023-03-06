@@ -29,12 +29,6 @@ export class PortfolioService {
 
   }
 
-  
-
-
-
-
-
 }
 
 

@@ -76,6 +76,8 @@
           type="button"
           class="btn"
           style="background-color: var(--red); color: white"
+          (click)="resultado.cv_url"
+          (disabled) = "resultado.cv_url.length == 0"
         >
           Descargar CV
         </button>

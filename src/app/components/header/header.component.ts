@@ -30,12 +30,13 @@ export class HeaderComponent implements OnInit {
   logout(): void {
     sessionStorage.removeItem('currentUser');
     this.authService.currentUserSubjet.next(
-      this.router.navigate(['/'])
+      this.router.navigate(['/perfil'])
     );
-
-    
-  
   }
 
+  descargarCV():void{
+    //falta implementar
+
+  }
 
 }
